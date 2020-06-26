@@ -13,7 +13,7 @@
     
     <div class="container">
         <h3>商品名: [[${productCatalog.getProductName()}]]</h3>
-        <p><img th:src="${productCatalog.getSumbnailImagePath()}" class="card-img-top" alt="..."></p>
+        <p><img th:src="@{__${productCatalog.getSumbnailImagePath()}__}" class="card-img-top" alt="..."></p>
         <p>商品説明: [[${productCatalog.getDescription()}]]</p>
     </div>
     <div class="container">

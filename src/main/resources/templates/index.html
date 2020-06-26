@@ -15,7 +15,7 @@
         <div th:each="products : ${productsInRow}" class="row mt-4" >
             <div class="col-sm-4" th:each="product : ${products}">
                 <div class="card">
-                    <img th:src="${product.getSumbnailImagePath()}" class="card-img-top" alt="...">
+                    <img th:src="@{__${product.getSumbnailImagePath()}__}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">[[${product.getProductName()}]]</h5>
                         <p class="card-text">[[${product.getDescription()}]]</p>
