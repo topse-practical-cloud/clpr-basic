@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 
 @SpringBootApplication
 @Controller
@@ -30,7 +32,7 @@ public class OnlinestoreApplication extends SpringBootServletInitializer {
 		SpringApplication.run(OnlinestoreApplication.class, args);
 	}
 	@GetMapping("/")
-	public String index(@RequestParam(name = "name", defaultValue = "World") String name, Model model) {
+	public String index(Model model, HttpServletResponse response) {
 		List<ProductCatalog> productCatalogs = productService.getFeaturedProduct();
 		List<ProductCatalog> tempResult = new ArrayList<ProductCatalog>();
 		List<List<ProductCatalog>> productsInRow = new ArrayList<List<ProductCatalog>>();
