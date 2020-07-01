@@ -2,5 +2,5 @@
 
 実習資材は以下の構成になっています。
 - onlinestore : ECサイト
-- microservice-ad : 広告のマイクロサービス
+- microservice-ad : 広告マイクロサービス
 - kubernetes-manifests : kubernetsを利用する際に用いる定義ファイル
