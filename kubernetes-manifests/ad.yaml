@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ad
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ad
+  template:
+    metadata:
+      labels:
+        app: ad
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: ad-server
+        image: gcr.io/FIXME/ad:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: JAVA_OPTIONS
+          value: "-javaagent:/app/opentelemetry-auto-all.jar -Dota.exporter=jaeger -Dota.exporter.jaeger.endpoint=jaeger-service:14250 -Dota.exporter.jaeger.service.name=ad"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: ad-service
+spec:
+    type: ClusterIP
+    selector:
+      app: ad
+    ports:
+    - name: restapi
+      port: 8080
+      targetPort: 8080
