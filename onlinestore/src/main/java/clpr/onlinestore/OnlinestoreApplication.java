@@ -37,8 +37,11 @@ public class OnlinestoreApplication extends SpringBootServletInitializer {
 	@Autowired
 	RestTemplate restTemplate;
 	
+	//TODO uncomment below lines in practice 3-4
+	/*
 	@Value("${clpr.endpoint.ad}")
 	private String adSrvEndpoint;
+	*/
 
 	Logger log;
 
