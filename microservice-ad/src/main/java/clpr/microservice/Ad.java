@@ -1,19 +1,19 @@
 package clpr.microservice;
 
 public class Ad {
-    private final long id;
-	private final String content;
+    private final String redirectUrl;
+	private final String text;
 
-	public Ad(long id, String content) {
-		this.id = id;
-		this.content = content;
+	public Ad(String redirectUrl, String text) {
+		this.redirectUrl = redirectUrl;
+		this.text = text;
 	}
 
-	public long getId() {
-		return id;
+	public String getRedirectUrl() {
+		return redirectUrl;
 	}
 
-	public String getContent() {
-		return content;
+	public String getText() {
+		return text;
 	}
 }
