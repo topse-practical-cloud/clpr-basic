@@ -48,13 +48,13 @@ public class AdApi extends SpringBootServletInitializer {
 		log = LoggerFactory.getLogger(AdApi.class);
 		long startTime = System.currentTimeMillis();
 		
-		/*
+		
 		Random rand = new Random();
 		try {
 			Thread.sleep(1000+rand.nextInt(20)); 
 		} catch (InterruptedException e) {
 		}
-		*/
+		
 		long responseTime = System.currentTimeMillis() - startTime;
 		log.info("request processed",v("ResponseTime", responseTime));
 		return new Ad("/product/20712D70","今SNSで話題沸騰中の人気マグカップが数量限定で入荷中");
