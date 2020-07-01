@@ -10,7 +10,9 @@
     <div class="container">
         <h1>TopSE onlinestore</h1>
     </div>
-    
+    <div th:if="${ad}" class="container">
+        <a th:href="@{__${ad.getRedirectUrl()}__}">[[${ad.getText()}]]</a>
+    </div>
     <div class="container">
         <div th:each="products : ${productsInRow}" class="row mt-4" >
             <div class="col-sm-4" th:each="product : ${products}">
