@@ -1,7 +1,7 @@
 FROM debian:10
 WORKDIR /app
 
-RUN apt-get update -y && apt-get install -y openjdk-11-jdk jetty9 && apt-get clean
+RUN apt-get update -y && apt-get install -y openjdk-11-jdk jetty9 curl && apt-get clean
 COPY ./pom.xml ./pom.xml
 COPY ./mvnw ./mvnw
 COPY ./.mvn ./.mvn
