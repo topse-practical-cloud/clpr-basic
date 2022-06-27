@@ -48,7 +48,7 @@ spec:
     port: 8080
     targetPort: 8080
 ---
-apiVersion: networking.k8s.io/v1beta1
+aapiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: onlinestore-ingress
@@ -57,6 +57,9 @@ spec:
   - http:
       paths:
       - path: /*
+        pathType: ImplementationSpecific
         backend:
-          serviceName: onlinestore-external-service
-          servicePort: 8080
+          service:
+            name: onlinestore-external-service
+            port:
+              number: 8080
